@@ -1,3 +1,206 @@
 .App {
   text-align: center;
 }
+
+body {
+  background-color: #1e1e1e;
+} 
+
+/*target logo image place in circle and full responsive */
+.header img {
+  height: 20vmin;
+  pointer-events: none;
+  border-radius: 50%;
+  border: 1px solid white;
+  float: right;
+  margin: 10px 10px 10px 10px;
+  width: 100px;
+  height: 80px;
+}
+/* make header text inline with logo and remove underline make white and add font family */
+.header h1 {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  margin-top: 20px;
+  text-align: center;
+  padding-left: 20px;
+  &:hover {
+    color: #1e90ff;
+  }
+
+
+  
+
+}
+/*place search bar under logo */
+.header input {
+  width: 100%;
+  height: 50px;
+  border-radius: 25px;
+  border: none;
+  padding: 0 20px;
+  font-size: 18px;
+  box-sizing: border-box;
+  margin-top: 20px;
+  text-align: center;
+  &:hover {
+    background-color: #1e90ff;
+  }
+}
+
+/* style all text to white style container to modernize */
+.App {
+  color: white;
+  background-color: #1e1e1e;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 1180px;
+  padding: 1rem;
+}
+
+/*style app-main to light blue boxes with space and change text to white */
+.App-main {
+  background-color: #1e90ff;
+  color: white;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 10px;
+  width: 100%;
+ 
+}
+
+/*fit containter to app-main change box color to black and text to white, add padding and margin */
+.App-main .container  {
+  background-color: black;
+  color: white;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 10px;
+  width: 100%;
+  &:hover {
+    transform: scale(1.1);
+    transition: transform 0.5s;
+    box-shadow: 0 0 10px white;
+  }
+}
+
+
+/* make buttons white and grey on hover */
+.App-main button {
+  background-color: white;
+  color: black;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 10px;
+  /*on hover make buttons blue */
+  &:hover {
+    background-color: #1e90ff;
+    color: white;
+  }
+}
+
+
+/*evenly space all muigrid contents place space between each box and items */
+.App-main .MuiGrid-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+/* style muigrid, data and all elements to fit evenly inside app-main div add black background for each box with white text, make each box increase in size on hover */
+.App-main .MuiGrid-root {
+
+    color: white;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 10px;
+    width: 100%;
+    
+  }
+
+/* style data to fit evenly inside app-main div add black background for each box with white text, make each box increase in size on hover */
+.App-main .data {
+    color: white;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 10px;
+    &:hover {
+      transform: scale(1.1);
+      transition: transform 0.5s;
+      box-shadow: 0 0 10px white;
+      text-align: center;
+
+    }
+  }
+
+  /* even spread muipaper root data and fit text inside container */
+  .MuiPaper-root {
+    color: white;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  
+  }
+
+  /* add space between each muigrid item space evenly */
+  .MuiGrid-item {
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  } 
+
+
+/* add media quiries for all devices keep all content evenly spaced and centered */
+@media (max-width: 768px) {
+  .App-main .MuiGrid-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  .App-main .MuiGrid-root {
+    color: white;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 10px;
+    width: 100%;
+  }
+  .App-main .data {
+    color: white;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 10px;
+    width: 100%;
+  }
+  .MuiPaper-root {
+    color: white;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 10px;
+    width: 100%;
+  }
+  .MuiGrid-item {
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 10px;
+    width: 100%;
+  }
+}
+
+

@@ -2,6 +2,9 @@ import './App.css';
 import {useState, useEffect} from "react";
 import Launches from "./components/Launches";
 import {Button, Container} from "@mui/material";
+/* import logo from assets folder */
+import logo from './assets/slogo.png';
+
 
 function App() {
 
@@ -125,24 +128,41 @@ function App() {
     }
 
     return (
-        <div>
+        <div className="App">
+        <div className="header">
+            <img src={logo} alt="SpaceX Logo" />
+            <a href="https://perrellarray.netlify.app//" target="_blank" rel="noreferrer">
+            <h1>SpaceX Launches</h1>
+            </a>
+            <div className="search-bar">
+                <input type="text" placeholder="Search..."/>
+            </div>
+        </div>    
+        <div className="App-main">
+            <div>
+                <Container>
+                    <p>Total Launches: {data["totalDocs"]}</p>
+                    {data["docs"] ? (
+                        <div>
+                            <Launches launches={data["docs"]}/>
+                            <p>Page {data["page"]} / {data["totalPages"]} </p>
+                            <Button variant="outlined" onClick={prevPage} disabled={currentPage === 1}>Prev Page</Button>
+                            <Button variant="outlined" onClick={nextPage} disabled={currentPage === data["totalPages"]}>Next
+                            Page</Button>
 
-            <Container>
-                <p>Total Launches: {data["totalDocs"]}</p>
-                {data["docs"] ? (
-                    <div>
-                        <Launches launches={data["docs"]}/>
-                        <p>Page {data["page"]} / {data["totalPages"]} </p>
-                        <Button variant="outlined" onClick={prevPage} disabled={currentPage === 1}>Prev Page</Button>
-                        <Button variant="outlined" onClick={nextPage} disabled={currentPage === data["totalPages"]}>Next
-                           Page</Button>
+                    </div>
+                    ) : (
+                        <div>Loading...</div>
+                    )}
 
-                   </div>
-                ) : (
-                    <div>Loading...</div>
-                )}
+                </Container>
 
-            </Container>
+            </div>
+        </div>           
+            
+            <footer>
+                <p>Created by:<a href="https://perrellarray.netlify.app//" target="_blank" rel="noreferrer">Perrell Shaw</a></p>
+            </footer>
 
         </div>
     );
